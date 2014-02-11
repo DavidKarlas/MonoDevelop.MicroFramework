@@ -1,0 +1,40 @@
+<TargetFramework id=".NETMicroFramework,Version=v4.3" _name=".Net Micro Framework 4.3" clrVersion="Clr_2_1">
+  <Assemblies>
+    <Assembly name="MFDpwsClient" version="4.3.0.0"/>
+    <Assembly name="MFDpwsDevice" version="4.3.0.0"/>
+    <Assembly name="MFDpwsExtensions" version="4.3.0.0"/>
+    <Assembly name="MFUpdate" version="4.3.0.0"/>
+    <Assembly name="MFWsStack" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Graphics" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Hardware" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Hardware.OneWire" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Hardware.PWM" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Hardware.SerialPort" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Hardware.Usb" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Ink" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.IO" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Native" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Net" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Net.Security" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Security.PKCS11" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Time" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.TinyCore" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Touch" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Update" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Wireless.IEEE_802_15_4" version="1.0.0.0"/>
+    <Assembly name="Microsoft.SPOT.Wireless.IEEE_802_15_4.Mac" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.CC2420" version="4.3.0.0"/>
+    <Assembly name="Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy" version="4.3.0.0"/>
+    <Assembly name="Microsoft.VisualBasic" version="1.0.0.0"/>
+    <Assembly name="mscorlib" version="4.3.0.0"/>
+    <Assembly name="System" version="4.3.0.0"/>
+    <Assembly name="System.Ftp" version="4.3.0.0"/>
+    <Assembly name="System.Http" version="4.3.0.0"/>
+    <Assembly name="System.IO" version="4.3.0.0"/>
+    <Assembly name="System.Net.Security" version="4.3.0.0"/>
+    <Assembly name="System.Security" version="4.3.0.0"/>
+    <Assembly name="System.Text.RegularExpressions" version="4.3.0.0"/>
+    <Assembly name="System.Xml" version="4.3.0.0"/>
+    <Assembly name="System.Xml.Legacy" version="4.3.0.0"/>
+  </Assemblies>
+</TargetFramework>
