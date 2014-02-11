@@ -4,13 +4,14 @@ This AddIn is in very early stages of development it's mostly in prototype state
 * Install latest Xamarin Studio(Windows only atm)
 * Enable AddIn called "Addin Maker"(Tools->Add-in Manager->Gallery->Addin Development->Addin Maker->Install)
 * Clone project from GitHub and open solution with Xamarin Studio
+* Run project will open new Xamarin Studio which has MicroFramework AddIn enabled
+* With new instance of Xmarain Studio open some MicroFramework project
 
 ## What it does ATM
 * User can open MicroFramework projects
 * Write code with MicroFramework libraries which limits IntelliSense only to possibilities available in MicroFramework.
 * Compile, deploy and execute code with single F5(Run) click
 * Displaying Debug.Print("Hello world!") in Application output window.
-* Run project will open new Xamarin Studio which has MicroFramework AddIn enabled now open some MicroFramework project
 
 ## TODO list
 ### Templates(Library/Executable) for creating new project
