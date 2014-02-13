@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using MonoDevelop.Core.Serialization;
 
 namespace MonoDevelop.MicroFramework
 {
@@ -34,7 +35,8 @@ namespace MonoDevelop.MicroFramework
 
 		public override TargetFrameworkMoniker GetDefaultTargetFrameworkForFormat(FileFormat format)
 		{
-			return new TargetFrameworkMoniker(".NETMicroFramework", "4.3");
+			//Keep default version invalid(1.0) or MonoDevelop will omit from serialization
+			return new TargetFrameworkMoniker(".NETMicroFramework", "1.0");
 		}
 
 		public override TargetFrameworkMoniker GetDefaultTargetFrameworkId()
@@ -47,6 +49,43 @@ namespace MonoDevelop.MicroFramework
 		//<DeployDevice>Netduino</DeployDevice>
 		//<DeployTransport>USB</DeployTransport>
 		public PortDefinition SelectedDebugPort { get; set; }
+
+		[ItemProperty("TargetFrameworkVersion")]
+		string targetFrameworkVersion = "v4.3";
+
+		public string TargetFrameworkVersion
+		{
+			get
+			{
+				return targetFrameworkVersion;
+			}
+			set
+			{
+				if(targetFrameworkVersion == value)
+					return;
+				NotifyModified("TargetFrameworkVersion");
+				targetFrameworkVersion = value;
+			}
+		}
+
+		//TODO: Add attribute Condition="'$(NetMfTargetsBaseDir)'==''"
+		[ItemProperty("NetMfTargetsBaseDir")]
+		string netMfTargetsBaseDir = "$(MSBuildExtensionsPath32)\\Microsoft\\.NET Micro Framework\\";
+
+		public string NetMfTargetsBaseDir
+		{
+			get
+			{
+				return netMfTargetsBaseDir;
+			}
+			set
+			{
+				if(netMfTargetsBaseDir == value)
+					return;
+				NotifyModified("NetMfTargetsBaseDir");
+				netMfTargetsBaseDir = value;
+			}
+		}
 
 		protected override ExecutionCommand CreateExecutionCommand(ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
 		{
@@ -93,12 +132,6 @@ namespace MonoDevelop.MicroFramework
 				LoggingService.LogError(string.Format("Cannot execute \"{0}\"", dotNetProjectConfig.CompiledOutputName), ex);
 				monitor.ReportError(string.Format("Cannot execute \"{0}\"", dotNetProjectConfig.CompiledOutputName), ex);
 			}
-			;
-		}
-
-		void messages(string message)
-		{
-			System.Diagnostics.Debug.WriteLine(message);
 		}
 	}
 }
