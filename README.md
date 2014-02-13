@@ -8,14 +8,13 @@ This AddIn is in very early stages of development it's mostly in prototype state
 * With new instance of Xmarain Studio open some MicroFramework project
 
 ## What it does ATM
+* User can create Library or Console projects via "New solution" in category "C# -> MicroFramework"
 * User can open MicroFramework projects
 * Write code with MicroFramework libraries which limits IntelliSense only to possibilities available in MicroFramework.
 * Compile, deploy and execute code with single F5(Run) click
 * Displaying Debug.Print("Hello world!") in Application output window.
 
 ## TODO list
-### Templates(Library/Executable) for creating new project
-Nice job for anyone who wants to help ;)
 ### User interface for selecting USB/Serial/TCP and which device
 This interface should be very similar to MonoTouch interface for selecting devices(so next to Run button and not in project properties)(Atm it picks up 1st MF.Net device on USB). Pull requests very welcom.
 ### Debugging support
