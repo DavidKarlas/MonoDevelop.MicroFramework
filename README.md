@@ -15,8 +15,6 @@ This AddIn is in very early stages of development it's mostly in prototype state
 * Displaying Debug.Print("Hello world!") in Application output window.
 
 ## TODO list
-### User interface for selecting USB/Serial/TCP and which device
-This interface should be very similar to MonoTouch interface for selecting devices(so next to Run button and not in project properties)(Atm it picks up 1st MF.Net device on USB). Pull requests very welcom.
 ### Debugging support
 Mostly what has to be done here is filling NotImplemented methods in [MicroFrameworkDebuggerSession](https://github.com/DavidKarlas/MonoDevelop.MicroFramework/blob/master/MonoDevelop.MicroFramework/MicroFrameworkDebuggerSession.cs) to see how to set breakpoints, see variable values, list threads, appDomains, processes, ILOffsets for breakpoints... See how it's done for VisualStudio plugin on [codeplex](http://netmf.codeplex.com/SourceControl/latest#client_v4_3/Framework/CorDebug/) which is under Apache 2.0 license. I will be focusing on this part atm.
 ### Port SDK Installer to Unix
