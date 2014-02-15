@@ -44,7 +44,7 @@ namespace MonoDevelop.MicroFramework
 				bool targetExist = false;
 				foreach(var target in targetsList)
 				{
-					if(target.PortDefinition.UniqueId == (device as PortDefinition).UniqueId)
+					if(target.PortDefinition.Port == (device as PortDefinition).Port)
 					{
 						targetsToKeep.Add(target);
 						targetExist = true;
