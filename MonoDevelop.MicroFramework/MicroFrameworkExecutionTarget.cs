@@ -19,12 +19,13 @@ namespace MonoDevelop.MicroFramework
 
 		public override string Name
 		{
-			get { return PortDefinition.DisplayName; }
+			//Replacing _ with space to make it look nicer
+			get { return PortDefinition.DisplayName.Replace('_',' '); }
 		}
 
 		public override string Id
 		{
-			get { return PortDefinition.UniqueId.ToString(); }
+			get { return PortDefinition.Port; }
 		}
 	}
 }

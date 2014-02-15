@@ -14,23 +14,24 @@ namespace MonoDevelop.MicroFramework
 		{
 		}
 
-		private PortDefinition portDefinition;
 
-		public PortDefinition PortDefinition
-		{
-			get
-			{
-				return portDefinition;
-			}
-			set
-			{
-				if(portDefinition != value)
-				{
-					portDefinition = value;
-					Target = new MicroFrameworkExecutionTarget(value);
-				}
-			}
-		}
+//		private PortDefinition portDefinition;
+//
+//		public PortDefinition PortDefinition
+//		{
+//			get
+//			{
+//				return portDefinition;
+//			}
+//			set
+//			{
+//				if(portDefinition != value)
+//				{
+//					portDefinition = value;
+//					Target = new MicroFrameworkExecutionTarget(value);
+//				}
+//			}
+//		}
 
 		public Core.FilePath OutputDirectory { get; set; }
 	}

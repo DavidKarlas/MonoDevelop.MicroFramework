@@ -18,19 +18,88 @@ namespace MonoDevelop.MicroFramework
 {
 	public class MicroFrameworkProject : DotNetProject
 	{
+		System.Threading.Timer timer;
+		public override void Dispose()
+		{
+			if(timer != null)
+			{
+				timer.Dispose();
+				timer = null;
+			}
+			base.Dispose();
+		}
+
+		private void Init()
+		{
+			timer = new System.Threading.Timer(new System.Threading.TimerCallback(updateTargetsList), null, 0, 1000);
+		}
+		List<MicroFrameworkExecutionTarget> targetsList=new List<MicroFrameworkExecutionTarget>();
+		private void updateTargetsList(object state)
+		{
+			var devices = PortDefinition.Enumerate(PortFilter.Usb);
+			var targetsToKeep = new List<MicroFrameworkExecutionTarget>();
+			bool changed = false;
+			foreach(var device in devices)
+			{
+				bool targetExist = false;
+				foreach(var target in targetsList)
+				{
+					if(target.PortDefinition.UniqueId == (device as PortDefinition).UniqueId)
+					{
+						targetsToKeep.Add(target);
+						targetExist = true;
+						break;
+					}
+				}
+				if(!targetExist)
+				{
+					changed = true;
+					var newTarget = new MicroFrameworkExecutionTarget(device as PortDefinition);
+					targetsList.Add(newTarget);
+					targetsToKeep.Add(newTarget);
+				}
+			}
+			changed |= targetsList.RemoveAll((target) => !targetsToKeep.Contains(target)) > 0;
+			if(changed)
+				OnExecutionTargetsChanged();
+		}
+
 		public MicroFrameworkProject()
 			: base()
 		{
+			Init();
 		}
 
 		public MicroFrameworkProject(string languageName)
 			: base(languageName)
 		{
+			Init();
 		}
 
 		public MicroFrameworkProject(string languageName, ProjectCreateInformation projectCreateInfo, XmlElement projectOptions)
 			: base(languageName, projectCreateInfo, projectOptions)
 		{
+			Init();
+		}
+
+		protected override IEnumerable<ExecutionTarget> OnGetExecutionTargets(ConfigurationSelector configuration)
+		{
+			return targetsList;
+		}
+
+		public override bool SupportsFramework (TargetFramework framework)
+		{
+			return framework.Id.Identifier == ".NETMicroFramework";
+		}
+
+		public override bool SupportsFormat (FileFormat format)
+		{
+			return format.Id == "MSBuild10" || format.Id == "MSBuild12";
+		}
+
+		protected override bool OnGetCanExecute(ExecutionContext context, ConfigurationSelector configuration)
+		{
+			return context.ExecutionTarget is MicroFrameworkExecutionTarget;
 		}
 
 		public override TargetFrameworkMoniker GetDefaultTargetFrameworkForFormat(FileFormat format)
@@ -48,25 +117,6 @@ namespace MonoDevelop.MicroFramework
 		//problems with version control and multi users projects
 		//<DeployDevice>Netduino</DeployDevice>
 		//<DeployTransport>USB</DeployTransport>
-		public PortDefinition SelectedDebugPort { get; set; }
-
-		[ItemProperty("TargetFrameworkVersion")]
-		string targetFrameworkVersion = "v4.3";
-
-		public string TargetFrameworkVersion
-		{
-			get
-			{
-				return targetFrameworkVersion;
-			}
-			set
-			{
-				if(targetFrameworkVersion == value)
-					return;
-				NotifyModified("TargetFrameworkVersion");
-				targetFrameworkVersion = value;
-			}
-		}
 
 		//TODO: Add attribute Condition="'$(NetMfTargetsBaseDir)'==''"
 		[ItemProperty("NetMfTargetsBaseDir")]
@@ -82,56 +132,16 @@ namespace MonoDevelop.MicroFramework
 			{
 				if(netMfTargetsBaseDir == value)
 					return;
-				NotifyModified("NetMfTargetsBaseDir");
 				netMfTargetsBaseDir = value;
+				NotifyModified("NetMfTargetsBaseDir");
 			}
 		}
 
 		protected override ExecutionCommand CreateExecutionCommand(ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
 		{
-			if(SelectedDebugPort == null && PortDefinition.Enumerate(PortFilter.Usb).Count > 0)
-				SelectedDebugPort = PortDefinition.Enumerate(PortFilter.Usb)[0] as PortDefinition;//TODO menu selection
-			if(SelectedDebugPort == null)
-				return null;
 			return new MicroFrameworkExecutionCommand() {
-				OutputDirectory = configuration.OutputDirectory,
-				PortDefinition = SelectedDebugPort
+				OutputDirectory = configuration.OutputDirectory
 			};
-		}
-
-		protected override void DoExecute(IProgressMonitor monitor, ExecutionContext context, ConfigurationSelector configuration)
-		{
-			DotNetProjectConfiguration dotNetProjectConfig = GetConfiguration(configuration) as DotNetProjectConfiguration;
-
-			IConsole console = dotNetProjectConfig.ExternalConsole
-				? context.ExternalConsoleFactory.CreateConsole(!dotNetProjectConfig.PauseConsoleOutput)
-				: context.ConsoleFactory.CreateConsole(!dotNetProjectConfig.PauseConsoleOutput);
-
-			AggregatedOperationMonitor aggregatedOperationMonitor = new AggregatedOperationMonitor(monitor);
-
-			try
-			{
-				try
-				{
-					ExecutionCommand executionCommand = CreateExecutionCommand(configuration, dotNetProjectConfig);
-					if(context.ExecutionTarget != null)
-						executionCommand.Target = context.ExecutionTarget;
-
-					IProcessAsyncOperation asyncOp = context.ExecutionHandler.Execute(executionCommand, console);
-					aggregatedOperationMonitor.AddOperation(asyncOp);
-					asyncOp.WaitForCompleted();
-				}
-				finally
-				{
-					aggregatedOperationMonitor.Dispose();
-					console.Dispose();
-				}
-			}
-			catch(Exception ex)
-			{
-				LoggingService.LogError(string.Format("Cannot execute \"{0}\"", dotNetProjectConfig.CompiledOutputName), ex);
-				monitor.ReportError(string.Format("Cannot execute \"{0}\"", dotNetProjectConfig.CompiledOutputName), ex);
-			}
 		}
 	}
 }

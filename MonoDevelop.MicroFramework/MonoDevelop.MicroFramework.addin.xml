@@ -1,5 +1,5 @@
 ﻿<Addin id			= "MicroFramework"
-		namespace	= "MonoDevelop.MicroFramework"
+		namespace	= "MonoDevelop"
 		name		= "MicroFramework"
 		author		= "David Karlaš"
 		copyright	= "MIT X11"
@@ -34,5 +34,9 @@
 	</Extension>
 	<Extension path = "/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class = "MonoDevelop.MicroFramework.MicroFrameworkProject" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/Core/ExecutionHandlers">
+		<ExecutionHandler id="Moonlight" class = "MonoDevelop.MicroFramework.MicroFrameworkExecutionHandler"/>
 	</Extension>
 </Addin>

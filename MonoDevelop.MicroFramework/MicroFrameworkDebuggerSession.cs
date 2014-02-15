@@ -24,9 +24,9 @@ namespace MonoDevelop.MicroFramework
 		{
 			var mfStartInfo = startInfo as MicroFrameworkDebuggerStartInfo;
 			if(mfStartInfo == null)//This should never happen...
-                throw new InvalidOperationException();
+				throw new InvalidOperationException();
 			var command = mfStartInfo.MFCommand;
-			using(var deployEngine = new Engine(command.PortDefinition))
+			using(var deployEngine = new Engine((command.Target as MicroFrameworkExecutionTarget).PortDefinition))
 			{
 				deployEngine.Start();
 				var listOfAseemblies = new ArrayList();
@@ -59,7 +59,7 @@ namespace MonoDevelop.MicroFramework
 			int retries = 0;
 			while(true)//TODO: More proper solution...
 			{
-				engine = new Engine(command.PortDefinition);
+				engine = new Engine((command.Target as MicroFrameworkExecutionTarget).PortDefinition);
 				engine.OnMessage += engine_OnMessage;
 				engine.Start();
 				if(engine.TryToConnect(2, 3000))

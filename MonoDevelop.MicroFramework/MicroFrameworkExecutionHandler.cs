@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace MonoDevelop.MicroFramework
 {
@@ -24,35 +25,35 @@ namespace MonoDevelop.MicroFramework
 		public IProcessAsyncOperation Execute(ExecutionCommand command, IConsole console)
 		{
 			var cmd = command as MicroFrameworkExecutionCommand;
-			using(Engine eng = new Engine((cmd.Target as MicroFrameworkExecutionTarget).PortDefinition))
-			{
-				eng.Start();
-				Engine.MessageHandler messageHandler = new Engine.MessageHandler((str) =>
-				{
-					console.Log.WriteLine(str);
-				});
-				var listOfAseemblies = new ArrayList();
-
-				//TODO: Check if this is robust enough will "be" and "le" really always be in output folder?
-				string dir = cmd.OutputDirectory;
-				if(eng.IsTargetBigEndian)
-					dir = Path.Combine(dir, "be");
-				else
-					dir = Path.Combine(dir, "le");
-
-				string[] files = Directory.GetFiles(dir, "*.pe");
-				foreach(var v in files)
-				{
-					using(var fs = new FileStream(v, FileMode.Open))
-					{
-						byte[] data = new byte[fs.Length];
-						fs.Read(data, 0, data.Length);
-						listOfAseemblies.Add(data);
-					}
-				}
-
-				eng.Deployment_Execute(listOfAseemblies, true, messageHandler);
-			}
+//			using(Engine eng = new Engine((cmd.Target as MicroFrameworkExecutionTarget).PortDefinition))
+//			{
+//				eng.Start();
+//				Engine.MessageHandler messageHandler = new Engine.MessageHandler((str) =>
+//				{
+//					console.Log.WriteLine(str);
+//				});
+//				var listOfAseemblies = new ArrayList();
+//
+//				//TODO: Check if this is robust enough will "be" and "le" really always be in output folder?
+//				string dir = cmd.OutputDirectory;
+//				if(eng.IsTargetBigEndian)
+//					dir = Path.Combine(dir, "be");
+//				else
+//					dir = Path.Combine(dir, "le");
+//
+//				string[] files = Directory.GetFiles(dir, "*.pe");
+//				foreach(var v in files)
+//				{
+//					using(var fs = new FileStream(v, FileMode.Open))
+//					{
+//						byte[] data = new byte[fs.Length];
+//						fs.Read(data, 0, data.Length);
+//						listOfAseemblies.Add(data);
+//					}
+//				}
+//
+//				eng.Deployment_Execute(listOfAseemblies, true, messageHandler);
+//			}
 			return new DebugExecutionHandler(null).Execute(cmd, console);
 		}
 
@@ -68,7 +69,9 @@ namespace MonoDevelop.MicroFramework
 
 			public IProcessAsyncOperation Execute(ExecutionCommand command, IConsole console)
 			{
-				DebuggingService.AttachToProcess(GetFactoryForCommand(command), new ProcessInfo(-1, ""));
+				MethodInfo InternalRun = typeof(DebuggingService).GetMethod("InternalRun", BindingFlags.NonPublic | BindingFlags.Static);
+				InternalRun.Invoke(null, new object[] { command, null, console });
+//				DebuggingService.Run("", console);
 				return this;
 			}
 
