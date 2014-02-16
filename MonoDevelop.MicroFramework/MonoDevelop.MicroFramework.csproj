@@ -52,7 +52,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MicroFrameworkBackend.cs" />
     <Compile Include="MicroFrameworkDebugger.cs" />
     <Compile Include="MicroFrameworkDebuggerSession.cs" />
     <Compile Include="MicroFrameworkDebuggerStartInfo.cs" />
@@ -71,11 +70,6 @@
     <EmbeddedResource Include="Templates\MicroFrameworkConsoleProject.xpt.xml">
       <LogicalName>MicroFrameworkConsoleProject.xpt.xml</LogicalName>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Templates\MicroFramework4.3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
