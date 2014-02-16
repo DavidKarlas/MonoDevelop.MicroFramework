@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MonoDevelop.MicroFramework
 {
-	class MicroFrameworkExecutionTarget:ExecutionTarget
+	public class MicroFrameworkExecutionTarget:ExecutionTarget
 	{
 		public PortDefinition PortDefinition { get; private set; }
 

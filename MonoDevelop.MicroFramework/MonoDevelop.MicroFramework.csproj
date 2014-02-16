@@ -61,6 +61,7 @@
     <Compile Include="MicroFrameworkProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MicroFrameworkProjectBinding.cs" />
+    <Compile Include="ExecutionTargetsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MonoDevelop.MicroFramework.addin.xml" />
