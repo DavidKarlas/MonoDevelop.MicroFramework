@@ -23,9 +23,9 @@ namespace MonoDevelop.MicroFramework
 		private static bool listening = false;
 		private static object eventLock = new object();
 
-		private static event Action deviceListChanged;
+		private static event Action<object> deviceListChanged;
 
-		public static event Action DeviceListChanged
+		public static event Action<object> DeviceListChanged
 		{
 			add
 			{
@@ -95,7 +95,7 @@ namespace MonoDevelop.MicroFramework
 			}
 			changed |= targets.RemoveAll((target) => !targetsToKeep.Contains(target)) > 0;
 			if(changed && deviceListChanged != null)
-				deviceListChanged();
+				deviceListChanged(null);
 
 		}
 	}

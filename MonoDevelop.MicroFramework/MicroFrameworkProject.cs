@@ -46,6 +46,11 @@ namespace MonoDevelop.MicroFramework
 				ExecutionTargetsManager.DeviceListChanged += OnExecutionTargetsChanged;
 		}
 
+		private void OnExecutionTargetsChanged(object dummy)
+		{
+			base.OnExecutionTargetsChanged();
+		}
+
 		protected override IEnumerable<ExecutionTarget> OnGetExecutionTargets(ConfigurationSelector configuration)
 		{
 			return ExecutionTargetsManager.Targets;
