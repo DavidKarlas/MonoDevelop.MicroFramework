@@ -13,10 +13,11 @@ This AddIn is in very early stages of development it's mostly in prototype state
 * Write code with MicroFramework libraries which limits IntelliSense only to possibilities available in MicroFramework.
 * Compile, deploy and execute code with single F5(Run) click
 * Displaying Debug.Print("Hello world!") in Application output window.
+* Set breakpoints, step through code and see variables values
 
 ## TODO list
 ### Debugging support
-Mostly what has to be done here is filling NotImplemented methods in [MicroFrameworkDebuggerSession](https://github.com/DavidKarlas/MonoDevelop.MicroFramework/blob/master/MonoDevelop.MicroFramework/MicroFrameworkDebuggerSession.cs) to see how to set breakpoints, see variable values, list threads, appDomains, processes, ILOffsets for breakpoints... See how it's done for VisualStudio plugin on [codeplex](http://netmf.codeplex.com/SourceControl/latest#client_v4_3/Framework/CorDebug/) which is under Apache 2.0 license. I will be focusing on this part atm.
+Most of debugging support is implemented but there are still missing feature to set values from IDE and few small bugs that will probably fixed soon.
 ### Port SDK Installer to Unix
 I haven't investigated this much but I imagine some libraries have to be added to GAC, USB Drivers, MicroFramework.CSharp.Targets and "Registry" entries  for location of MetaDataProcessor and other tools needed for compiling.
 ### Port MetaDataProcessor.exe to Unix
