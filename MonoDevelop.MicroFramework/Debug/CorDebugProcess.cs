@@ -1,19 +1,14 @@
 using System;
 using System.Threading;
-using System.IO;
 using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Microsoft.SPOT.Debugger;
 using WireProtocol = Microsoft.SPOT.Debugger.WireProtocol;
 using BreakpointDef = Microsoft.SPOT.Debugger.WireProtocol.Commands.Debugging_Execution_BreakpointDef;
-using Microsoft.Win32.SafeHandles;
-using System.IO.Pipes;
 using System.Text.RegularExpressions;
 using MonoDevelop.MicroFramework;
 using Mono.Debugging.Client;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Microsoft.SPOT.Debugger
