@@ -3,7 +3,7 @@
 		name		= "MicroFramework"
 		author		= "David Karlaš"
 		copyright	= "MIT X11"
-		description	= "Provides support for .Net MicroFramework developing, deploying and debugging(not yet :()."
+		description	= "Provides support for .Net MicroFramework developing, deploying and debugging."
 		category	= "IDE extensions"
 		version		= "0.1">
 	<Dependencies>
