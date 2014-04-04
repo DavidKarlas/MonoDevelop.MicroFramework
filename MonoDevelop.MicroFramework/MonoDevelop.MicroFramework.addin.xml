@@ -7,10 +7,14 @@
 		category	= "IDE extensions"
 		version		= "0.1">
 	<Dependencies>
-		<Addin id="::MonoDevelop.Core" version="4.2.2" />
-		<Addin id="::MonoDevelop.Ide" version="4.2.2" />
-		<Addin id="::MonoDevelop.Debugger" version="4.2.2" />
+		<Addin id="::MonoDevelop.Core" version="4.2" />
+		<Addin id="::MonoDevelop.Ide" version="4.2" />
+		<Addin id="::MonoDevelop.Debugger" version="4.2" />
 	</Dependencies>
+	<Runtime>
+		<Import assembly="Debugger.dll" />
+		<Import assembly="WinUsb.dll" />
+	</Runtime>
 	<Extension path="/MonoDevelop/Debugging/DebuggerEngines">
 		<DebuggerEngine id="MonoDevelop.MicroFramework.Debugger" name="Debugger for .NET Micro Framework" features="Breakpoints, Pause, Stepping, DebugFile, ConditionalBreakpoints, Tracepoints, Catchpoints, Disassembly" type="MonoDevelop.MicroFramework.MicroFrameworkDebugger" />
 	</Extension>
