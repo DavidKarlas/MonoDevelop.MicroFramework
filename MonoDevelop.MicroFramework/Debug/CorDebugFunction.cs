@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Mono.Cecil;
+using MonoDevelop.MicroFramework;
+using Mono.Cecil.Cil;
 
 namespace Microsoft.SPOT.Debugger
 {
@@ -194,6 +196,20 @@ namespace Microsoft.SPOT.Debugger
 			get {
 				return GetCode (ref m_codeIL);
 			}
+		}
+
+		public MethodDefinition GetMethodInfo (MicroFrameworkDebuggerSession session)
+		{
+			return Assembly.MetaData != null ? Assembly.MetaData.LookupToken ((int)Token) as MethodDefinition : null;
+		}
+
+		public MethodSymbols GetMethodSymbols (MicroFrameworkDebuggerSession session)
+		{
+			if (Assembly.DebugData == null)
+				return null;
+			var methodSymols = new MethodSymbols (new MetadataToken (PdbxMethod.Token.CLR));
+			Assembly.DebugData.Read (methodSymols);
+			return methodSymols;
 		}
 	}
 }

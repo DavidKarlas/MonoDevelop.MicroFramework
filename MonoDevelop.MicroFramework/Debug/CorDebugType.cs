@@ -1,6 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using Mono.Cecil;
+using MonoDevelop.MicroFramework;
 
 namespace Microsoft.SPOT.Debugger
 {
@@ -36,6 +38,11 @@ namespace Microsoft.SPOT.Debugger
 			get {
 				return new CorDebugType[0];
 			}
+		}
+
+		public TypeDefinition GetTypeInfo (MicroFrameworkDebuggerSession session)
+		{
+			return Class.Assembly.MetaData != null ? Class.Assembly.MetaData.LookupToken ((int)Class.PdbxClass.Token.CLR) as TypeDefinition : null;
 		}
 	}
 

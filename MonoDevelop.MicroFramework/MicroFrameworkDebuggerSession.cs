@@ -741,26 +741,4 @@ namespace MonoDevelop.MicroFramework
 			base.Dispose ();
 		}
 	}
-
-	public static class RandomExt
-	{
-		public static MethodDefinition GetMethodInfo (this CorDebugFunction func, MicroFrameworkDebuggerSession session)
-		{
-			return func.Assembly.MetaData != null ? func.Assembly.MetaData.LookupToken ((int)func.Token) as MethodDefinition : null;
-		}
-
-		public static MethodSymbols GetMethodSymbols (this CorDebugFunction func, MicroFrameworkDebuggerSession session)
-		{
-			if (func.Assembly.DebugData == null)
-				return null;
-			var methodSymols = new MethodSymbols (new MetadataToken (func.PdbxMethod.Token.CLR));
-			func.Assembly.DebugData.Read (methodSymols);
-			return methodSymols;
-		}
-
-		public static TypeDefinition GetTypeInfo (this CorDebugType type, MicroFrameworkDebuggerSession session)
-		{
-			return type.Class.Assembly.MetaData != null ? type.Class.Assembly.MetaData.LookupToken ((int)type.Class.PdbxClass.Token.CLR) as TypeDefinition : null;
-		}
-	}
 }
