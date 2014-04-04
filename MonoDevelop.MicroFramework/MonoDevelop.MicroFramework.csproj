@@ -12,8 +12,6 @@
     <AssemblyName>MonoDevelop.MicroFramework</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,21 +42,27 @@
     <Reference Include="System.Xml" />
     <Reference Include="Mono.Cecil">
       <HintPath>..\ext\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
       <HintPath>..\ext\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Debugging">
       <HintPath>..\ext\Mono.Debugging.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoDevelop.Core">
       <HintPath>..\ext\MonoDevelop.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoDevelop.Debugger">
       <HintPath>..\ext\MonoDevelop.Debugger.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoDevelop.Ide">
       <HintPath>..\ext\MonoDevelop.Ide.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
