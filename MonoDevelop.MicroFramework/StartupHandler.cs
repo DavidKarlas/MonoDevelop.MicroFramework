@@ -51,7 +51,7 @@ namespace MonoDevelop.MicroFramework
 		{
 			if(Platform.IsMac)
 			{
-				string addInFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+				string addInFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace("file:", "");
 				var registryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3");
 				if(registryKey.GetValue("InstallRoot") == null)
 				{
@@ -65,10 +65,10 @@ namespace MonoDevelop.MicroFramework
 					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild-frameworks"), "/Library/Frameworks/Mono.framework/External/xbuild-frameworks/", true);
 				}
 
-				if(!File.Exists("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets"))
+				if(!Directory.Exists("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework"))
 				{
-					File.Copy(Path.Combine(addInFolder, "files", "xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets"),
-						"/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets");
+					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild"),
+						"/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/", true);
 				}
 			}
 		}

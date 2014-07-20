@@ -65,6 +65,7 @@
     </Reference>
     <Reference Include="Mono.Cecil.Mdb">
       <HintPath>..\ext\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,8 @@
   <ItemGroup>
     <Folder Include="Debug\" />
     <Folder Include="files\" />
+    <Folder Include="files\xbuild\" />
+    <Folder Include="files\xbuild\Microsoft\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Debugger\Debugger.csproj">
@@ -1167,9 +1170,6 @@
     <None Include="files\sdk\Tools\Fonts\TrueType\Pescab.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="files\xbuild\CSharp.targets">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\MFDpwsClient.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1310,6 +1310,9 @@
     </None>
     <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\RedistList\FrameworkList.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild\Microsoft\.NET Micro Framework\v4.3\CSharp.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>

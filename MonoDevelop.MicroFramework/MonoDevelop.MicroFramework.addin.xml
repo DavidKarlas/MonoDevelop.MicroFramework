@@ -355,7 +355,7 @@
 		<Import file="files/sdk/Tools/Fonts/TrueType/Pericl.ttf" />
 		<Import file="files/sdk/Tools/Fonts/TrueType/Pesca.ttf" />
 		<Import file="files/sdk/Tools/Fonts/TrueType/Pescab.ttf" />
-		<Import file="files/xbuild/CSharp.targets" />
+		<Import file="files/xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets" />
 		<Import file="files/xbuild-framework/.NETMicroFramework/v4.3/MFDpwsClient.dll" />
 		<Import file="files/xbuild-framework/.NETMicroFramework/v4.3/MFDpwsClient.pdb" />
 		<Import file="files/xbuild-framework/.NETMicroFramework/v4.3/MFDpwsDevice.dll" />
