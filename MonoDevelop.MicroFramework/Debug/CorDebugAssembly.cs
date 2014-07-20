@@ -96,6 +96,12 @@ namespace Microsoft.SPOT.Debugger
 				if (MetaData != null && File.Exists (Path.ChangeExtension (m_pdbxFile.PdbxPath, ".pdb"))) {
 					DebugData = new Mono.Cecil.Pdb.PdbReaderProvider ().GetSymbolReader (MetaData, Path.ChangeExtension (m_pdbxFile.PdbxPath, ".pdb"));
 					MetaData.ReadSymbols (DebugData);
+				} else if (MetaData != null && File.Exists (Path.ChangeExtension (m_pdbxFile.PdbxPath, ".exe.mdb"))) {
+					DebugData = new Mono.Cecil.Mdb.MdbReaderProvider ().GetSymbolReader (MetaData, Path.ChangeExtension (m_pdbxFile.PdbxPath, ".exe"));
+					MetaData.ReadSymbols (DebugData);
+				} else if (MetaData != null && File.Exists (Path.ChangeExtension (m_pdbxFile.PdbxPath, ".dll.mdb"))) {
+					DebugData = new Mono.Cecil.Mdb.MdbReaderProvider ().GetSymbolReader (MetaData, Path.ChangeExtension (m_pdbxFile.PdbxPath, ".dll"));
+					MetaData.ReadSymbols (DebugData);
 				}
 			}
 		}

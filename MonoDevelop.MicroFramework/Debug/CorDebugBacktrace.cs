@@ -90,6 +90,11 @@ namespace Microsoft.SPOT.Debugger
 					var reader = frame.Function.Assembly.DebugData;
 					if (reader != null) {
 						var sim = new MethodSymbols (new Mono.Cecil.MetadataToken (frame.Function.Token));
+						//Ugliest hack ever
+						if(reader is Mono.Cecil.Mdb.MdbReader) {
+							for(int i = 0; i < 100; i++)
+								sim.Variables.Add(new VariableDefinition(null));
+						}
 						reader.Read (sim);
 						InstructionSymbol prevSp = new InstructionSymbol (-1, null);
 						foreach (var sp in sim.Instructions) {

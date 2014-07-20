@@ -208,6 +208,11 @@ namespace Microsoft.SPOT.Debugger
 			if (Assembly.DebugData == null)
 				return null;
 			var methodSymols = new MethodSymbols (new MetadataToken (PdbxMethod.Token.CLR));
+			//Ugliest hack ever
+			if(Assembly.DebugData is Mono.Cecil.Mdb.MdbReader) {
+				for(int i = 0; i < 100; i++)
+					methodSymols.Variables.Add(new VariableDefinition(null));
+			}
 			Assembly.DebugData.Read (methodSymols);
 			return methodSymols;
 		}

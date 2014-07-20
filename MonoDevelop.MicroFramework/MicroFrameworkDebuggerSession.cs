@@ -43,13 +43,20 @@ namespace MonoDevelop.MicroFramework
 
 		public void RegisterProcess (CorDebugProcess corDebugProcess)
 		{
-			processes.Add (corDebugProcess);
-			process = corDebugProcess;
+			lock(processes) {
+				processes.Add(corDebugProcess);
+				process = corDebugProcess;
+			}
 		}
 
 		public void UnregisterProcess (CorDebugProcess process)
 		{
-			processes.Remove (process);
+			if(process == null)
+				return;
+			lock(processes) {
+				if(processes.Contains(process))
+					processes.Remove(process);
+			}
 		}
 
 		string OutputDirectory = "";
@@ -189,6 +196,11 @@ namespace MonoDevelop.MicroFramework
 
 
 					var met = new MethodSymbols (new MetadataToken (frame.Function.Token));
+					//Ugliest hack ever
+					if(reader is Mono.Cecil.Mdb.MdbReader) {
+						for(int i = 0; i < 100; i++)
+							met.Variables.Add(new VariableDefinition(null));
+					}
 					reader.Read (met);
 
 					if (met == null || met.Instructions.Count == 0) {
@@ -600,6 +612,12 @@ namespace MonoDevelop.MicroFramework
 						foreach (var t in module.Types) {
 							foreach (var m in t.Methods) {
 								var methodSymbols = new MethodSymbols (m.MetadataToken);
+								//Ugly hack
+								if(reader is Mono.Cecil.Mdb.MdbReader)
+								{
+									foreach(var variable in m.Body.Variables)
+										methodSymbols.Variables.Add(variable);
+								}
 								reader.Read (methodSymbols);
 								if (methodSymbols.Instructions.Count == 0)
 									continue;

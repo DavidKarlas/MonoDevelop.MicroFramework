@@ -610,7 +610,7 @@ namespace Microsoft.SPOT.Debugger
 
 						if (m_fTerminating) {
 							ManagedCallbacks.ManagedCallbackProcess mc = new ManagedCallbacks.ManagedCallbackProcess (this, ManagedCallbacks.ManagedCallbackProcess.EventType.ExitProcess);
-							mc.Dispatch (m_corDebug.ManagedCallback);
+							mc.Dispatch (corDebug.ManagedCallback);
 						}
 
 						StopDebugging ();
@@ -978,7 +978,7 @@ namespace Microsoft.SPOT.Debugger
 
 			//Extract deployDeviceName
 			if (!deployDeviceName.StartsWith (CorDebugProcess.c_DeployDeviceName))
-				throw new Exception (String.Format ("\"{0}\" does not appear to be a valid Micro Framework device name", CorDebugProcess.c_DeployDeviceName));
+				throw new Exception (String.Format ("\"{0}\" does not appear to be a valid Micro Framework device name", deployDeviceName));
 
 			deployDeviceName = deployDeviceName.Substring (CorDebugProcess.c_DeployDeviceName.Length);
 			cb.RemoveArguments (args.Length - 1, 1);

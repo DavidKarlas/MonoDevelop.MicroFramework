@@ -180,11 +180,13 @@ namespace Microsoft.SPOT.Debugger
 						break;
 					case PortFilter.Usb: 
 						{
-							res = WinUsb_AsyncUsbStream.EnumeratePorts();
-
-							lst.AddRange(res);
-
-							res = AsyncUsbStream.EnumeratePorts(); 
+						if (Platform.IsWindows) {
+							res = WinUsb_AsyncUsbStream.EnumeratePorts ();
+							lst.AddRange (res);
+							res = AsyncUsbStream.EnumeratePorts (); 
+						} else {
+							res = LibUsb_AsyncUsbStream.EnumeratePorts ();
+						}
 						}
 						break;
 					case PortFilter.TcpIp:

@@ -2,18 +2,20 @@
 		namespace	= "MonoDevelop"
 		name		= "MicroFramework"
 		author		= "David Karlaš"
-		copyright	= "MIT X11"
+		copyright	= "MIT"
 		description	= "Provides support for .Net MicroFramework developing, deploying and debugging."
 		category	= "IDE extensions"
-		version		= "0.1">
+		version		= "0.2">
 	<Dependencies>
-		<Addin id="::MonoDevelop.Core" version="4.2" />
-		<Addin id="::MonoDevelop.Ide" version="4.2" />
-		<Addin id="::MonoDevelop.Debugger" version="4.2" />
+		<Addin id="::MonoDevelop.Core" version="5.1" />
+		<Addin id="::MonoDevelop.Ide" version="5.1" />
+		<Addin id="::MonoDevelop.Debugger" version="5.1" />
 	</Dependencies>
 	<Runtime>
 		<Import assembly="Debugger.dll" />
 		<Import assembly="WinUsb.dll" />
+		<Import file="libusb-1.0.a" />
+		<Import file="libusb-1.0.dylib" />
 	</Runtime>
 	<Extension path="/MonoDevelop/Debugging/DebuggerEngines">
 		<DebuggerEngine id="MonoDevelop.MicroFramework.Debugger" name="Debugger for .NET Micro Framework" features="Breakpoints, Pause, Stepping, DebugFile, ConditionalBreakpoints, Tracepoints, Catchpoints, Disassembly" type="MonoDevelop.MicroFramework.MicroFrameworkDebugger" />
@@ -35,6 +37,6 @@
 		<DataType class = "MonoDevelop.MicroFramework.MicroFrameworkProject" />
 	</Extension>
 	<Extension path = "/MonoDevelop/Core/ExecutionHandlers">
-		<ExecutionHandler id="Moonlight" class = "MonoDevelop.MicroFramework.MicroFrameworkExecutionHandler"/>
+		<ExecutionHandler id="MicroFramework" class = "MonoDevelop.MicroFramework.MicroFrameworkExecutionHandler"/>
 	</Extension>
 </Addin>

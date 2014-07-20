@@ -185,25 +185,27 @@ namespace Microsoft.SPOT.Debugger
 					break;
 				case PortFilter.Usb:
 					{
+					if (MonoDevelop.Core.Platform.IsWindows) {
 						PortDefinition[] portUSB;
 						PortDefinition[] portWinUSB;
                         
-						portUSB = AsyncUsbStream.EnumeratePorts();
-						portWinUSB = WinUsb_AsyncUsbStream.EnumeratePorts();
+						portUSB = AsyncUsbStream.EnumeratePorts ();
+						portWinUSB = WinUsb_AsyncUsbStream.EnumeratePorts ();
 
 						int lenUSB = portUSB != null ? portUSB.Length : 0;
 						int lenWinUSB = portWinUSB != null ? portWinUSB.Length : 0;
 
 						ports = new PortDefinition[lenUSB + lenWinUSB];
 
-						if(lenUSB > 0)
-						{
-							Array.Copy(portUSB, ports, lenUSB);
+						if (lenUSB > 0) {
+							Array.Copy (portUSB, ports, lenUSB);
 						}
-						if(lenWinUSB > 0)
-						{
-							Array.Copy(portWinUSB, 0, ports, lenUSB, lenWinUSB);
+						if (lenWinUSB > 0) {
+							Array.Copy (portWinUSB, 0, ports, lenUSB, lenWinUSB);
 						}
+					} else {
+						ports = LibUsb_AsyncUsbStream.EnumeratePorts ();
+					}
 					}
 					break;
 				case PortFilter.TcpIp:

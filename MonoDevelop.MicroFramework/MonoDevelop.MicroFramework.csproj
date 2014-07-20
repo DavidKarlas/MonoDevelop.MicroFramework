@@ -63,6 +63,10 @@
       <HintPath>..\ext\MonoDevelop.Ide.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.5.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Package>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/Mono.Cecil.Mdb.dll</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MicroFrameworkDebugger.cs" />
@@ -130,12 +134,16 @@
   </Target>
   -->
   <ItemGroup>
+    <Folder Include="Debug\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Debugger\Debugger.csproj">
       <Project>{D9DCA6FB-680F-4355-ABEF-128DB02721E6}</Project>
       <Name>Debugger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Debug\" />
+    <None Include="libusb-1.0.a" />
+    <None Include="libusb-1.0.dylib" />
   </ItemGroup>
 </Project>
