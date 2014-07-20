@@ -426,4 +426,7 @@
 	<Extension path = "/MonoDevelop/Core/ExecutionHandlers">
 		<ExecutionHandler id="MicroFramework" class = "MonoDevelop.MicroFramework.MicroFrameworkExecutionHandler"/>
 	</Extension>
+	<Extension path = "/MonoDevelop/Ide/StartupHandlers">
+		<Class class = "MonoDevelop.MicroFramework.StartupHandler"/>
+	</Extension>
 </Addin>

@@ -110,6 +110,7 @@
     <Compile Include="Debug\FieldValueReference.cs" />
     <Compile Include="Debug\Adaptors.cs" />
     <Compile Include="Debug\VariableValueReference.cs" />
+    <Compile Include="StartupHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MonoDevelop.MicroFramework.addin.xml" />
