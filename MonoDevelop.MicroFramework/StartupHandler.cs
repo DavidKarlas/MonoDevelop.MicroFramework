@@ -62,7 +62,7 @@ namespace MonoDevelop.MicroFramework
 
 				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework"))
 				{
-					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild-frameworks"), "/Library/Frameworks/Mono.framework/External/xbuild-frameworks/", true);
+					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild-framework"), "/Library/Frameworks/Mono.framework/External/xbuild-frameworks/", true);
 				}
 
 				if(!Directory.Exists("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework"))
