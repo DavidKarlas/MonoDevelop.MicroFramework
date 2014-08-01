@@ -14,6 +14,7 @@
 	<Runtime>
 		<Import assembly="Debugger.dll" />
 		<Import assembly="WinUsb.dll" />
+		<Import assembly="LibUsbDotNet.dll" />
 		<Import file="libusb-1.0.a" />
 		<Import file="libusb-1.0.dylib" />
 		<Import file="files/sdk/Micro Framework SDK Release Notes.txt" />
