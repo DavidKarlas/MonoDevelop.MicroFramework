@@ -38,6 +38,12 @@ namespace MonoDevelop.MicroFramework
 					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild/"),
 						"/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/");
 				}
+
+				if(!Directory.Exists("/Library/Frameworks/Microsoft .NET Micro Framework"))
+				{
+					DirectoryCopy(Path.Combine(addInFolder, "files", "sdk/"),
+						"/Library/Frameworks/");
+				}
 			}
 		}
 	}

@@ -19,7 +19,6 @@
 		<Import file="libusb-1.0.dylib" />
 		<Import file="files/sdk/Micro Framework SDK Release Notes.txt" />
 		<Import file="files/sdk/REDIST.TXT" />
-		<Import file="files/sdk/Assemblies/.DS_Store" />
 		<Import file="files/sdk/Assemblies/be/MFDpwsClient.dll" />
 		<Import file="files/sdk/Assemblies/be/MFDpwsClient.pdb" />
 		<Import file="files/sdk/Assemblies/be/MFDpwsClient.pdbx" />

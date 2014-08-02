@@ -15,7 +15,7 @@
         <CurBuildNumber>1</CurBuildNumber>
         <CurRevNumber>0</CurRevNumber>
 
-        <TasksAssembly>\Microsoft .NET Micro Framework\v4.3\Tools\Microsoft.SPOT.Tasks.dll</TasksAssembly>
+        <TasksAssembly>\Library\Frameworks\Microsoft .NET Micro Framework\v4.3\Tools\Microsoft.SPOT.Tasks.dll</TasksAssembly>
     </PropertyGroup>
 
     <UsingTask TaskName="Microsoft.SPOT.Tasks.GetDeviceFrameworkPaths"    AssemblyFile="$(TasksAssembly)"/>
