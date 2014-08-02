@@ -25,7 +25,7 @@ namespace MonoDevelop.MicroFramework
 				{
 					registryKey.SetValue("BuildNumber", "1");
 					registryKey.SetValue("RevisionNumber", "0");
-					registryKey.SetValue("InstallRoot", Path.Combine(addInFolder, "files", "sdk"));
+					registryKey.SetValue("InstallRoot", "/Library/Frameworks/Microsoft .NET Micro Framework/");
 				}
 
 				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework"))
@@ -39,10 +39,10 @@ namespace MonoDevelop.MicroFramework
 						"/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/");
 				}
 
-				if(!Directory.Exists("/Library/Frameworks/Microsoft .NET Micro Framework"))
+				if(!Directory.Exists("/Library/Frameworks/Microsoft .NET Micro Framework/"))
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "sdk/"),
-						"/Library/Frameworks/");
+						"/Library/Frameworks/Microsoft .NET Micro Framework/");
 				}
 			}
 		}
