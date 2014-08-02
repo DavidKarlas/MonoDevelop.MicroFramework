@@ -1202,18 +1202,6 @@
     <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor.mdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor1.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor1.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MFDeploy.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1317,6 +1305,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\REDIST.TXT">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor.exe.mdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -310,10 +310,7 @@
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Fonts/NinaB.tinyfnt" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Fonts/small.tinyfnt" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe" />
-		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.mdb" />
-		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.pdb" />
-		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor1.exe" />
-		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor1.pdb" />
+		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe.mdb" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MFDeploy.exe" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MFDeploy.exe.config" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MFDeploy.pdb" />
