@@ -29,7 +29,7 @@ namespace MonoDevelop.MicroFramework
 				{
 					registryKey.SetValue("BuildNumber", "1");
 					registryKey.SetValue("RevisionNumber", "0");
-					registryKey.SetValue("InstallRoot", "/Library/Frameworks/Microsoft .NET Micro Framework/");
+					registryKey.SetValue("InstallRoot", "/Library/Frameworks/Microsoft .NET Micro Framework/v4.3");
 				}
 
 				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework"))
