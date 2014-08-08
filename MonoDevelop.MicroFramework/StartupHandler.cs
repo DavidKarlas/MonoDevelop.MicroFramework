@@ -21,6 +21,10 @@ namespace MonoDevelop.MicroFramework
 			{
 				string addInFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace("file:", "");
 				var registryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3");
+				if(registryKey == null)
+				{
+					registryKey = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3");
+				}
 				if(registryKey.GetValue("InstallRoot") == null)
 				{
 					registryKey.SetValue("BuildNumber", "1");
