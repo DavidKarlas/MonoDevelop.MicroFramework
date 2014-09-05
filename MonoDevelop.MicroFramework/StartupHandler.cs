@@ -47,7 +47,7 @@ namespace MonoDevelop.MicroFramework
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "frameworks/"),
 						"/Library/Frameworks/");
-					MonoDevelop.MacInterop.AppleScript.Run("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe\\\" with administrator privileges");
+					MonoDevelop.MacInterop.AppleScript.Run("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe\\\"\" with administrator privileges");
 				}
 			}
 		}
