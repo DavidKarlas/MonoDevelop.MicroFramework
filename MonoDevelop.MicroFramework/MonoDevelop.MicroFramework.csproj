@@ -302,9 +302,6 @@
     <None Include="files\xbuild\Microsoft\.NET Micro Framework\v4.3\CSharp.targets">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\.DS_Store">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\MFDpwsClient.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1308,6 +1305,246 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Tools\MetaDataProcessor.exe.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Diagnostics.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Diagnostics.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Diagnostics.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Diagnostics.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.AnalogInput.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.AnalogInput.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.AnalogInput.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.AnalogInput.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.Netduino.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.Netduino.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.Netduino.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.Netduino.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoMini.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoMini.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoMini.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoMini.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoPlus.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.NetduinoPlus.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.PWM.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.PWM.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.PWM.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.Hardware.PWM.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.IO.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.IO.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.IO.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\be\SecretLabs.NETMF.IO.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Diagnostics.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Diagnostics.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Diagnostics.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Diagnostics.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.AnalogInput.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.AnalogInput.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.AnalogInput.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.AnalogInput.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.Netduino.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.Netduino.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.Netduino.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.Netduino.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoMini.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoMini.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoMini.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoMini.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoPlus.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.NetduinoPlus.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.PWM.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.PWM.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.PWM.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.Hardware.PWM.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.IO.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.IO.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.IO.pdbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\Assemblies\le\SecretLabs.NETMF.IO.pe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Diagnostics.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Diagnostics.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.AnalogInput.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.AnalogInput.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.Netduino.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.Netduino.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.NetduinoMini.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.NetduinoMini.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.NetduinoPlus.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.PWM.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.Hardware.PWM.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.IO.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.IO.pdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
