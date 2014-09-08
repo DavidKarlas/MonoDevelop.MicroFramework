@@ -80,4 +80,12 @@
   <File AssemblyName="System.Text.RegularExpressions" Version="4.3.1.0" PublicKeyToken="2670f5f21e7f4192" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
   <File AssemblyName="System.Xml" Version="4.3.1.0" PublicKeyToken="2670f5f21e7f4192" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
   <File AssemblyName="System.Xml.Legacy" Version="4.3.1.0" PublicKeyToken="2670f5f21e7f4192" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.IO" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware.PWM" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware.NetduinoPlus" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware.NetduinoMini" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware.Netduino" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Hardware.AnalogInput" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
+  <File AssemblyName="SecretLabs.NETMF.Diagnostics" Version="4.3.1.0" PublicKeyToken="null" Culture="neutral" ProcessorArchitecture="MSIL" InGac="false" />
 </FileList>
