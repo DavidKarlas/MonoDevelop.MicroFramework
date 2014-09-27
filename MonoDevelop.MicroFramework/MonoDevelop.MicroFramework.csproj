@@ -127,6 +127,18 @@
     <EmbeddedResource Include="Debug\DiagnosticStrings.resx">
       <LogicalName>Microsoft.SPOT.Debugger.DiagnosticStrings.resources</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="icons\project-microframework-console-32.png">
+      <LogicalName>project-microframework-console-32.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="icons\project-microframework-console-32%402x.png">
+      <LogicalName>project-microframework-console-32@2x.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="icons\project-microframework-library-32.png">
+      <LogicalName>project-microframework-library-32.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="icons\project-microframework-library-32%402x.png">
+      <LogicalName>project-microframework-library-32@2x.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -144,6 +156,7 @@
     <Folder Include="files\xbuild\Microsoft\" />
     <Folder Include="files\frameworks\Microsoft .NET Micro Framework\" />
     <Folder Include="files\frameworks\Microsoft .NET Micro Framework\v4.3\" />
+    <Folder Include="icons\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Debugger\Debugger.csproj">
