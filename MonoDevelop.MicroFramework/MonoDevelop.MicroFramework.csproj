@@ -1561,31 +1561,83 @@
     <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\SecretLabs.NETMF.IO.pdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\MFUpdate.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\MFUpdate.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.OneWire.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.OneWire.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.PWM.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.PWM.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Security.PKCS11.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Security.PKCS11.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Update.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Update.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Mac.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Mac.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.CC2420.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.CC2420.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.VisualBasic.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.VisualBasic.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Ftp.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Ftp.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Security.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Security.pdb" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Text.RegularExpressions.dll" />
-    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Text.RegularExpressions.pdb" />
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\MFUpdate.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\MFUpdate.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.OneWire.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.OneWire.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.PWM.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Hardware.PWM.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Security.PKCS11.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Security.PKCS11.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Update.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Update.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Mac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Mac.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.CC2420.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.CC2420.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.SPOT.Wireless.IEEE_802_15_4.Phy.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.VisualBasic.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\Microsoft.VisualBasic.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Ftp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Ftp.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Security.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Security.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Text.RegularExpressions.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="files\xbuild-framework\.NETMicroFramework\v4.3\System.Text.RegularExpressions.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
