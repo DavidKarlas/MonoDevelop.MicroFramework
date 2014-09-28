@@ -33,7 +33,7 @@ namespace MonoDevelop.MicroFramework
 					registryKey.SetValue("InstallRoot", "/Library/Frameworks/Microsoft .NET Micro Framework/v4.3");
 				}
 				bool newlyInstalled = false;
-				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework"))
+				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework") || !File.Exists("/Library/Frameworks/Mono.framework/External/xbuild-framework/.NETMicroFramework/v4.3/Microsoft.SPOT.Hardware.PWM.dll"))
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild-framework/"), "/Library/Frameworks/Mono.framework/External/xbuild-frameworks/");
 					newlyInstalled = true;
