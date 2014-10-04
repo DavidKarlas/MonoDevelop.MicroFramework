@@ -53,7 +53,8 @@ namespace MonoDevelop.MicroFramework
 					newlyInstalled = true;
 				}
 
-				if(!Directory.Exists("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework"))
+				if(!Directory.Exists("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework") ||
+				   (GetChecksum("/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets") != GetChecksum(Path.Combine(addInFolder, "files/xbuild/Microsoft/.NET Micro Framework/v4.3/CSharp.targets"))))
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "xbuild/"),
 						"/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild/");

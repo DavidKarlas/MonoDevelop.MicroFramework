@@ -119,7 +119,32 @@
     <MakeDir Directories="@(EndianAwareDirs)" />
   </Target>
 
-  <Target Name="CopyExeToEndian" >
+
+	<Target Name="DeployOutputFiles"
+		DependsOnTargets="CoreCompile">
+
+		<Copy
+			SourceFiles="$(IntermediateOutputPath)$(AssemblyName)$(TargetExt).mdb"
+			Condition="'$(OutDir)' != '' and Exists('$(IntermediateOutputPath)$(AssemblyName)$(TargetExt).mdb')"
+			DestinationFolder="$(OutDir)"
+			SkipUnchangedFiles="$(SkipCopyUnchangedFiles)" >
+			<Output TaskParameter="DestinationFiles" ItemName="FileWrites"/>
+		</Copy>
+
+		<Copy SourceFiles="@(IntermediateAssembly)" Condition="'$(OutDir)' != '' and Exists ('@(IntermediateAssembly)')" DestinationFolder="$(OutDir)" SkipUnchangedFiles="$(SkipCopyUnchangedFiles)">
+			<Output TaskParameter="DestinationFiles" ItemName="FileWrites"/>
+		</Copy>
+
+		<Copy
+			SourceFiles = "@(IntermediateSatelliteAssemblies)"
+			DestinationFiles = "@(IntermediateSatelliteAssemblies->'$(OutDir)\%(Culture)\$(AssemblyName).resources.dll')"
+			Condition = "'@(IntermediateSatelliteAssemblies)' != ''"
+			SkipUnchangedFiles="$(SkipCopyUnchangedFiles)">
+			<Output TaskParameter="DestinationFiles" ItemName="FileWrites"/>
+		</Copy>
+	</Target>
+
+  <Target Name="CopyExeToEndian" DependsOnTargets="DeployOutputFiles">
     <Copy
         Condition="Exists('$(ProjectDir)$(IntermediateOutputPath)$(TargetName)$(TinyCLR_ExeExt)')"
         SourceFiles="$(ProjectDir)$(IntermediateOutputPath)$(TargetName)$(TinyCLR_ExeExt)"
