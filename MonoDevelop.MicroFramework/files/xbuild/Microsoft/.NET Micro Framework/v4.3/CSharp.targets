@@ -452,35 +452,35 @@
         I haven't tried yet.
         -->
 
-    <Copy
-		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename).pe')')"
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename).pe')"
+        <Copy
+		SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename).pe')"
         DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)le\%(Filename).pe')"
-        SkipUnchangedFiles="true" >
+        SkipUnchangedFiles="true"
+        ContinueOnError="true" >
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename).pe')')"
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename).pe')"
+		SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename).pe')"
         DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)be\%(Filename).pe')"
-        SkipUnchangedFiles="true" >
+        SkipUnchangedFiles="true"
+        ContinueOnError="true" >
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename)$(TinyCLR_PdbxExt)')')"
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename)$(TinyCLR_PdbxExt)')"
+		SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename)$(TinyCLR_PdbxExt)')"
         DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)le\%(Filename)$(TinyCLR_PdbxExt)')"
-        SkipUnchangedFiles="true">
+        SkipUnchangedFiles="true"
+        ContinueOnError="true">
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename)$(TinyCLR_PdbxExt)')')"
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename)$(TinyCLR_PdbxExt)')"
+		SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename)$(TinyCLR_PdbxExt)')"
         DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)be\%(Filename)$(TinyCLR_PdbxExt)')"
-        SkipUnchangedFiles="true">
+        SkipUnchangedFiles="true"
+        ContinueOnError="true">
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
