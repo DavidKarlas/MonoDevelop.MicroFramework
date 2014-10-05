@@ -390,9 +390,9 @@
     <ItemGroup>
       <_ReferencedAssemblyDll Include="@(TinyCLR_StartProgram_ResolvedFiles);@(TinyCLR_StartProgram_ResolvedDependencyFiles)" />
       <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)LE\%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)PE\LE\%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)..\PE\LE\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)le\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)pe\le\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)..\pe\le\%(filename).pe')" />
 
       <ReferencedPeFile Include="%(_ReferencedPeFile.identity)" Condition="EXISTS(%(_ReferencedPeFile.identity))" />
     </ItemGroup>
@@ -402,9 +402,9 @@
     <ItemGroup>
       <_ReferencedAssemblyDll Include="@(TinyCLR_StartProgram_ResolvedFiles);@(TinyCLR_StartProgram_ResolvedDependencyFiles)" />
       <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)BE\%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)PE\BE\%(filename).pe')" />
-      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)..\PE\BE\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)be\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)pe\be\%(filename).pe')" />
+      <_ReferencedPeFile Include="@(_ReferencedAssemblyDll->'%(RootDir)%(Directory)..\pe\be\%(filename).pe')" />
 
       <ReferencedPeFile Include="%(_ReferencedPeFile.identity)" Condition="EXISTS(%(_ReferencedPeFile.identity))" />
     </ItemGroup>
@@ -453,29 +453,33 @@
         -->
 
     <Copy
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)LE\%(Filename).pe')"
-        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)LE\%(Filename).pe')"
+		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename).pe')')"
+        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename).pe')"
+        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)le\%(Filename).pe')"
         SkipUnchangedFiles="true" >
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)BE\%(Filename).pe')"
-        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)BE\%(Filename).pe')"
+		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename).pe')')"
+        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename).pe')"
+        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)be\%(Filename).pe')"
         SkipUnchangedFiles="true" >
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)LE\%(Filename)$(TinyCLR_PdbxExt)')"
-        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)LE\%(Filename)$(TinyCLR_PdbxExt)')"
+		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename)$(TinyCLR_PdbxExt)')')"
+        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)le\%(Filename)$(TinyCLR_PdbxExt)')"
+        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)le\%(Filename)$(TinyCLR_PdbxExt)')"
         SkipUnchangedFiles="true">
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
     </Copy>
     <Copy
-        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)BE\%(Filename)$(TinyCLR_PdbxExt)')"
-        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)BE\%(Filename)$(TinyCLR_PdbxExt)')"
+		Condition="Exists('@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename)$(TinyCLR_PdbxExt)')')"
+        SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)be\%(Filename)$(TinyCLR_PdbxExt)')"
+        DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)be\%(Filename)$(TinyCLR_PdbxExt)')"
         SkipUnchangedFiles="true">
 
       <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
