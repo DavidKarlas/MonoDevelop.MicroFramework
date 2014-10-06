@@ -1057,7 +1057,7 @@ namespace MonoDevelop.MicroFramework
 			ObjectAdapter.Dispose();
 			ObjectAdapter = null;
 			Breakpoints.Clear();
-			processes = null;
+			processes.Clear();
 			process = null;
 			VsPackage.MessageCentre.Session = null;
 			documents = null;
