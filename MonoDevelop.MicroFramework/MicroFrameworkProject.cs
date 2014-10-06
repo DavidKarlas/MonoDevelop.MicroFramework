@@ -108,8 +108,16 @@ namespace MonoDevelop.MicroFramework
 
 		protected override ExecutionCommand CreateExecutionCommand(ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
 		{
+			var references = GetReferencedAssemblies(configSel, true).ToList();
+			references = references.Select<string,string>((r) =>
+			{
+				if(r.StartsWith("/"))
+					return r;
+				return GetAbsoluteChildPath(r).FullPath;
+			}).ToList();
 			return new MicroFrameworkExecutionCommand() {
-				OutputDirectory = configuration.OutputDirectory
+				OutputDirectory = configuration.OutputDirectory,
+				ReferencedAssemblies = references
 			};
 		}
 	}

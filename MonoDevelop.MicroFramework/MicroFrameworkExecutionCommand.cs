@@ -15,6 +15,12 @@ namespace MonoDevelop.MicroFramework
 		}
 
 
+		public List<string> ReferencedAssemblies
+		{
+			get;
+			set;
+		}
+
 //		private PortDefinition portDefinition;
 //
 //		public PortDefinition PortDefinition
