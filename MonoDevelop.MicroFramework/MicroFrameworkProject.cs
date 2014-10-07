@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using MonoDevelop.Core.Serialization;
+using MonoDevelop.Ide;
 
 namespace MonoDevelop.MicroFramework
 {
@@ -68,7 +69,14 @@ namespace MonoDevelop.MicroFramework
 
 		protected override bool OnGetCanExecute(ExecutionContext context, ConfigurationSelector configuration)
 		{
-			return context.ExecutionTarget is MicroFrameworkExecutionTarget && base.OnGetCanExecute(context, configuration);
+			if(IdeApp.Workspace.GetAllSolutions().Any((s) => s.StartupItem == this))
+			{
+				return context.ExecutionTarget is MicroFrameworkExecutionTarget && base.OnGetCanExecute(context, configuration);
+			}
+			else
+			{
+				return base.OnGetCanExecute(context, configuration);
+			}
 		}
 
 		public override TargetFrameworkMoniker GetDefaultTargetFrameworkForFormat(FileFormat format)
