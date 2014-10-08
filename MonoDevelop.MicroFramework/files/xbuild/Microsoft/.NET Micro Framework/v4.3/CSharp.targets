@@ -6,7 +6,7 @@
     <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.3</TargetFrameworkVersion>
     <AssemblyFoldersSuffix Condition=" '$(AssemblyFoldersSuffix)' == '' ">AssemblyFoldersEx</AssemblyFoldersSuffix>
     <GenerateManifests>true</GenerateManifests>
-    <DefineConstants>$(DefineConstants),MF_FRAMEWORK_VERSION_V4_3</DefineConstants>
+    <DefineConstants>$(DefineConstants)MF_FRAMEWORK_VERSION_V4_3</DefineConstants>
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
   </PropertyGroup>
 
