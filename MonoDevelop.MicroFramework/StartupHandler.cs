@@ -62,7 +62,8 @@ namespace MonoDevelop.MicroFramework
 				}
 
 				if(!Directory.Exists("/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/") ||
-				   (GetChecksum("/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe") != GetChecksum(Path.Combine(addInFolder, "files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe"))))
+				   (GetChecksum("/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe") != GetChecksum(Path.Combine(addInFolder, "files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe"))) ||
+				   !File.Exists("/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor"))
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "frameworks/"),
 						"/Library/Frameworks/");
