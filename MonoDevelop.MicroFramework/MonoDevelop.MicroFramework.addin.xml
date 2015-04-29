@@ -6,11 +6,6 @@
 		description	= "Provides support for .Net MicroFramework developing, deploying and debugging."
 		category	= "IDE extensions"
 		version		= "0.3.7">
-	<Dependencies>
-		<Addin id="::MonoDevelop.Core" version="5.2" />
-		<Addin id="::MonoDevelop.Ide" version="5.2" />
-		<Addin id="::MonoDevelop.Debugger" version="5.2" />
-	</Dependencies>
 	<Runtime>
 		<Import assembly="Debugger.dll" />
 		<Import assembly="WinUsb.dll" />
@@ -373,6 +368,7 @@
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Assemblies/le/System.Xml.pe" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Fonts/NinaB.tinyfnt" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Fonts/small.tinyfnt" />
+		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe.mdb" />
 		<Import file="files/frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MFDeploy.exe" />

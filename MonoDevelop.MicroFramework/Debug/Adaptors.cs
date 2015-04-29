@@ -64,6 +64,11 @@ namespace MonoDevelop.MicroFramework
 				return array.ExactType.FirstTypeParameter;
 			}
 		}
+
+		public int[] GetLowerBounds()
+		{
+			return new int[array.GetDimensions().Length];
+		}
 	}
 
 	public class StringAdaptor: IStringAdaptor
