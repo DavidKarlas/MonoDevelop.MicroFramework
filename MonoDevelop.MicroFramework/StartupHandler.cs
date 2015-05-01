@@ -34,7 +34,7 @@ namespace MonoDevelop.MicroFramework
 			if(Platform.IsMac)
 			{
 				string addInFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace("file:", "");
-				var registryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3");
+				var registryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3", true);
 				if(registryKey == null)
 				{
 					registryKey = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\.NETMicroFramework\\v4.3");
@@ -44,6 +44,12 @@ namespace MonoDevelop.MicroFramework
 					registryKey.SetValue("BuildNumber", "1");
 					registryKey.SetValue("RevisionNumber", "0");
 					registryKey.SetValue("InstallRoot", "/Library/Frameworks/Microsoft .NET Micro Framework/v4.3");
+				}
+				var assFolderKey = registryKey.OpenSubKey("AssemblyFolder", true);
+				if(assFolderKey == null)
+				{
+					assFolderKey = registryKey.CreateSubKey("AssemblyFolder");
+					assFolderKey.SetValue("", "");
 				}
 				bool newlyInstalled = false;
 				if(!Directory.Exists("/Library/Frameworks/Mono.framework/External/xbuild-frameworks/.NETMicroFramework") ||
