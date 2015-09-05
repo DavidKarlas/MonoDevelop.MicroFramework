@@ -11,10 +11,22 @@ namespace MonoDevelop.MicroFramework
 {
 	class StartupHandler : CommandHandler
 	{
+		static MethodInfo AppleScript;
+
+		static void RunAppleScript(string str)
+		{
+			if(AppleScript == null)
+			{
+				var type = Type.GetType("MonoDevelop.MacInterop.AppleScript");
+				AppleScript = type.GetMethod("Run");
+			}
+			AppleScript.Invoke(null, new object[]{ str });
+		}
+
 		static void DirectoryCopy(string sourceDirName, string destDirName)
 		{
 			//TNX TO: http://stackoverflow.com/a/8865284/661901
-			MonoDevelop.MacInterop.AppleScript.Run("do shell script \"cp -R \\\"" + sourceDirName + "\\\" \\\"" + destDirName + "\\\"\" with administrator privileges");
+			RunAppleScript("do shell script \"cp -R \\\"" + sourceDirName + "\\\" \\\"" + destDirName + "\\\"\" with administrator privileges");
 		}
 
 		private static string GetChecksum(string file)
@@ -73,8 +85,8 @@ namespace MonoDevelop.MicroFramework
 				{
 					DirectoryCopy(Path.Combine(addInFolder, "files", "frameworks/"),
 						"/Library/Frameworks/");
-					MonoDevelop.MacInterop.AppleScript.Run("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe\\\"\" with administrator privileges");
-					MonoDevelop.MacInterop.AppleScript.Run("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor\\\"\" with administrator privileges");
+					RunAppleScript("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor.exe\\\"\" with administrator privileges");
+					RunAppleScript("do shell script \"chmod +x \\\"/Library/Frameworks/Microsoft .NET Micro Framework/v4.3/Tools/MetaDataProcessor\\\"\" with administrator privileges");
 					newlyInstalled = true;
 				}
 				if(newlyInstalled)
