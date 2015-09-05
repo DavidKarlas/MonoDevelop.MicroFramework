@@ -17,8 +17,8 @@ namespace MonoDevelop.MicroFramework
 		{
 			if(AppleScript == null)
 			{
-				var type = Type.GetType("MonoDevelop.MacInterop.AppleScript");
-				AppleScript = type.GetMethod("Run");
+				var type = Type.GetType("MonoDevelop.MacInterop.AppleScript, MacPlatform");
+				AppleScript = type.GetMethod("Run", new []{ typeof(string) });
 			}
 			AppleScript.Invoke(null, new object[]{ str });
 		}
