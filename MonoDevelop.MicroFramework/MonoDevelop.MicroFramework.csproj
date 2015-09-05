@@ -127,7 +127,7 @@
 	<ItemGroup>
 		<FilesToCopyInFilesFolder Include="files\**\*.*" />
 	</ItemGroup>
-	<Target Name="BeforeBuild" Condition="$(OS)=='Unix'">
+	<Target Name="BeforeBuild">
 		<Copy SourceFiles="@(FilesToCopyInFilesFolder)" DestinationFolder="$(OutputPath)\files\%(RecursiveDir)" />
 	</Target>
 	<ItemGroup>
@@ -149,8 +149,7 @@
 		</None>
 	</ItemGroup>
 	<PropertyGroup Condition="$(OS)!='Unix'">
-		<MacPlatform>
-		</MacPlatform>
+		<MacPlatform />
 	</PropertyGroup>
 	<PropertyGroup Condition="$(OS)=='Unix'">
 		<MacPlatform>MonoDevelop.MacPlatform</MacPlatform>
