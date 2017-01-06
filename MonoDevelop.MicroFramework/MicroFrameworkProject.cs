@@ -17,113 +17,71 @@ using MonoDevelop.Ide;
 
 namespace MonoDevelop.MicroFramework
 {
-	public class MicroFrameworkProject : DotNetProject
+	public class MicroFrameworkProject : DotNetProjectExtension
 	{
-		public override void Dispose()
+		protected override void OnEndLoad ()
 		{
-			ExecutionTargetsManager.DeviceListChanged -= OnExecutionTargetsChanged;
-			base.Dispose();
-		}
-
-		public MicroFrameworkProject()
-			: base()
-		{
-		}
-
-		public MicroFrameworkProject(string languageName)
-			: base(languageName)
-		{
-		}
-
-		public MicroFrameworkProject(string languageName, ProjectCreateInformation projectCreateInfo, XmlElement projectOptions)
-			: base(languageName, projectCreateInfo, projectOptions)
-		{
-		}
-
-		protected override void OnEndLoad()
-		{
-			base.OnEndLoad();
-			if(CompileTarget != CompileTarget.Library)
+			base.OnEndLoad ();
+			if (Project.CompileTarget != CompileTarget.Library)
 				ExecutionTargetsManager.DeviceListChanged += OnExecutionTargetsChanged;
 		}
 
-		private void OnExecutionTargetsChanged(object dummy)
+		private void OnExecutionTargetsChanged (object dummy)
 		{
-			base.OnExecutionTargetsChanged();
+			base.OnExecutionTargetsChanged ();
 		}
 
-		protected override IEnumerable<ExecutionTarget> OnGetExecutionTargets(ConfigurationSelector configuration)
+		protected override IEnumerable<ExecutionTarget> OnGetExecutionTargets (ConfigurationSelector configuration)
 		{
 			return ExecutionTargetsManager.Targets;
 		}
 
-		public override bool SupportsFramework(TargetFramework framework)
-		{
-			return framework.Id.Identifier == ".NETMicroFramework";
-		}
-
-		public override bool SupportsFormat(FileFormat format)
+		protected override bool OnGetSupportsFormat (Projects.MSBuild.MSBuildFileFormat format)
 		{
 			return format.Id == "MSBuild10" || format.Id == "MSBuild12";
 		}
 
-		protected override bool OnGetCanExecute(ExecutionContext context, ConfigurationSelector configuration)
+		protected override bool OnGetSupportsFramework (TargetFramework framework)
 		{
-			if(IdeApp.Workspace.GetAllSolutions().Any((s) => s.StartupItem == this))
-			{
-				return context.ExecutionTarget is MicroFrameworkExecutionTarget && base.OnGetCanExecute(context, configuration);
-			}
-			else
-			{
-				return base.OnGetCanExecute(context, configuration);
+			return framework.Id.Identifier == ".NETMicroFramework";
+		}
+
+		protected override bool OnGetCanExecute (ExecutionContext context, ConfigurationSelector configuration)
+		{
+			if (IdeApp.Workspace.GetAllSolutions ().Any ((s) => s.StartupItem == this.Project)) {
+				return context.ExecutionTarget is MicroFrameworkExecutionTarget && base.OnGetCanExecute (context, configuration);
+			} else {
+				return base.OnGetCanExecute (context, configuration);
 			}
 		}
 
-		public override TargetFrameworkMoniker GetDefaultTargetFrameworkForFormat(FileFormat format)
+		protected override TargetFrameworkMoniker OnGetDefaultTargetFrameworkId ()
+		{
+			return new TargetFrameworkMoniker (".NETMicroFramework", "4.3");
+		}
+
+		protected override TargetFrameworkMoniker OnGetDefaultTargetFrameworkForFormat (string toolsVersion)
 		{
 			//Keep default version invalid(1.0) or MonoDevelop will omit from serialization
-			return new TargetFrameworkMoniker(".NETMicroFramework", "1.0");
+			return new TargetFrameworkMoniker (".NETMicroFramework", "1.0");
 		}
 
-		public override TargetFrameworkMoniker GetDefaultTargetFrameworkId()
+		protected override void OnInitializeFromTemplate (ProjectCreateInformation projectCreateInfo, XmlElement template)
 		{
-			return new TargetFrameworkMoniker(".NETMicroFramework", "4.3");
-		}
-		//Seems like VS is ignoring this
-		//So we won't implement it my guess is they removed becauese it was causing
-		//problems with version control and multi users projects
-		//<DeployDevice>Netduino</DeployDevice>
-		//<DeployTransport>USB</DeployTransport>
-
-		//TODO: Add attribute Condition="'$(NetMfTargetsBaseDir)'==''"
-		[ItemProperty("NetMfTargetsBaseDir")]
-		string netMfTargetsBaseDir = "$(MSBuildExtensionsPath32)\\Microsoft\\.NET Micro Framework\\";
-
-		public string NetMfTargetsBaseDir
-		{
-			get
-			{
-				return netMfTargetsBaseDir;
-			}
-			set
-			{
-				if(netMfTargetsBaseDir == value)
-					return;
-				netMfTargetsBaseDir = value;
-				NotifyModified("NetMfTargetsBaseDir");
-			}
+			Project.ProjectProperties.SetValue ("NetMfTargetsBaseDir", "$(MSBuildExtensionsPath32)\\Microsoft\\.NET Micro Framework\\", condition: "'$(NetMfTargetsBaseDir)'==''");
+			Project.RemoveImport ("$(MSBuildBinPath)\\Microsoft.CSharp.targets");
+			Project.AddImportIfMissing ("$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\\CSharp.Targets", "");
+			base.OnInitializeFromTemplate (projectCreateInfo, template);
 		}
 
-		protected override ExecutionCommand CreateExecutionCommand(ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
+		protected override ExecutionCommand OnCreateExecutionCommand (ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
 		{
-			var references = GetReferencedAssemblies(configSel, true).ToList();
-			references = references.Select<string,string>((r) =>
-			{
-				if(r.StartsWith("/"))
-					return r;
-				return GetAbsoluteChildPath(r).FullPath;
-			}).ToList();
-			return new MicroFrameworkExecutionCommand() {
+			var references = Project.GetReferencedAssemblies (configSel, true).Result.Select<AssemblyReference, string> ((r) => {
+				if (r.FilePath.IsAbsolute)
+					return r.FilePath;
+				return Project.GetAbsoluteChildPath (r.FilePath).FullPath;
+			}).ToList ();
+			return new MicroFrameworkExecutionCommand () {
 				OutputDirectory = configuration.OutputDirectory,
 				ReferencedAssemblies = references
 			};

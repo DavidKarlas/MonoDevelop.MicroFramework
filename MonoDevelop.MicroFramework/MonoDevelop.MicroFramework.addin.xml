@@ -5,7 +5,7 @@
 		copyright	= "MIT"
 		description	= "Provides support for .Net MicroFramework developing, deploying and debugging."
 		category	= "IDE extensions"
-		version		= "0.4">
+		version		= "0.5">
 	<Runtime>
 		<Import assembly="Debugger.dll" />
 		<Import assembly="WinUsb.dll" />
@@ -506,14 +506,11 @@
 	<Extension path="/MonoDevelop/Debugging/DebuggerEngines">
 		<DebuggerEngine id="MonoDevelop.MicroFramework.Debugger" name="Debugger for .NET Micro Framework" features="Breakpoints, Pause, Stepping, DebugFile, ConditionalBreakpoints, Tracepoints, Catchpoints, Disassembly" type="MonoDevelop.MicroFramework.MicroFrameworkDebugger" />
 	</Extension>
-	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProjectSubtype id=".NETMicroFramework" useXBuild="true" guid="{b69e3092-b931-443c-abe7-7e7b65f2a37f}" type="MonoDevelop.MicroFramework.MicroFrameworkProject">
-			<AddImport language="C#" projects="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
-			<RemoveImport language="C#" projects="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-		</DotNetProjectSubtype>
-	</Extension>
-	<Extension path="/MonoDevelop/ProjectModel/ProjectBindings">
-		<ProjectBinding id="MicroFrameworkProject" class="MonoDevelop.MicroFramework.MicroFrameworkProjectBinding" />
+	<Extension path = "/MonoDevelop/ProjectModel/ProjectModelExtensions">
+		<ProjectFlavor
+			guid="{B69E3092-B931-443C-ABE7-7E7B65F2A37F}"
+			type="MonoDevelop.MicroFramework.MicroFrameworkProject"
+			alias=".NETMicroFramework" />
 	</Extension>
 	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
 		<ProjectTemplate id="MicroFrameworkConsoleProject" resource="MicroFrameworkConsoleProject.xpt.xml" />

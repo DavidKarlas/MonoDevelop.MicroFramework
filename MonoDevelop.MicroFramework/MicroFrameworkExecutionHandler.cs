@@ -22,9 +22,9 @@ namespace MonoDevelop.MicroFramework
 			return command is MicroFrameworkExecutionCommand;
 		}
 
-		public IProcessAsyncOperation Execute(ExecutionCommand command, IConsole console)
+		public ProcessAsyncOperation Execute (ExecutionCommand command, OperationConsole console)
 		{
-			return DebuggingService.GetExecutionHandler().Execute(command, console);
+			return DebuggingService.GetExecutionHandler ().Execute (command, console);
 		}
 	}
 }

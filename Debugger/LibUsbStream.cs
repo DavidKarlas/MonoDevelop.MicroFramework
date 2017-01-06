@@ -45,7 +45,10 @@ namespace Microsoft.SPOT.Debugger
 			var result = new List<PortDefinition>();
 			try {
 				foreach(UsbRegistry usbRegDevice in UsbDevice.AllDevices) {
-					if(usbRegDevice.Device.Info.Descriptor.Class.Equals(LibUsbDotNet.Descriptors.ClassCodeType.PerInterface)) {
+					var desc = usbRegDevice.Device?.Info?.Descriptor;
+					if (desc == null)
+						continue;
+					if (desc.Class.Equals (LibUsbDotNet.Descriptors.ClassCodeType.PerInterface)) {
 						if(string.IsNullOrWhiteSpace(usbRegDevice.FullName))
 							continue;
 						var fullname = usbRegDevice.FullName.ToLower();
