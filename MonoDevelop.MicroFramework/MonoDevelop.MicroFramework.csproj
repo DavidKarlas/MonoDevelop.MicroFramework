@@ -13,7 +13,6 @@
 		<AssemblyName>MonoDevelop.MicroFramework</AssemblyName>
 		<FileAlignment>512</FileAlignment>
 		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-		<MDBinDir>/home/builder/cydin-files/AppReleases/6.1/__install/Xamarin Studio.app/Contents/Resources/lib/monodevelop/bin</MDBinDir>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugSymbols>true</DebugSymbols>
