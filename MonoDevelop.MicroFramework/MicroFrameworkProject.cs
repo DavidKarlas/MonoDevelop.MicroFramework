@@ -66,12 +66,12 @@ namespace MonoDevelop.MicroFramework
 			return new TargetFrameworkMoniker (".NETMicroFramework", "1.0");
 		}
 
-		protected override void OnInitializeFromTemplate (ProjectCreateInformation projectCreateInfo, XmlElement template)
+		protected override void Initialize ()
 		{
+			base.Initialize ();
 			Project.ProjectProperties.SetValue ("NetMfTargetsBaseDir", "$(MSBuildExtensionsPath32)\\Microsoft\\.NET Micro Framework\\", condition: "'$(NetMfTargetsBaseDir)'==''");
 			Project.RemoveImport ("$(MSBuildBinPath)\\Microsoft.CSharp.targets");
 			Project.AddImportIfMissing ("$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\\CSharp.Targets", "");
-			base.OnInitializeFromTemplate (projectCreateInfo, template);
 		}
 
 		protected override ExecutionCommand OnCreateExecutionCommand (ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
