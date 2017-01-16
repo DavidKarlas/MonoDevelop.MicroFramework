@@ -28,7 +28,9 @@ namespace MonoDevelop.MicroFramework
 
 		private void OnExecutionTargetsChanged (object dummy)
 		{
-			base.OnExecutionTargetsChanged ();
+			Runtime.RunInMainThread (delegate {
+				base.OnExecutionTargetsChanged ();
+			});
 		}
 
 		protected override IEnumerable<ExecutionTarget> OnGetExecutionTargets (ConfigurationSelector configuration)
