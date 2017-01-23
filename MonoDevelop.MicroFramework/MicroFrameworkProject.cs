@@ -26,6 +26,12 @@ namespace MonoDevelop.MicroFramework
 				ExecutionTargetsManager.DeviceListChanged += OnExecutionTargetsChanged;
 		}
 
+		public override void Dispose ()
+		{
+			base.Dispose ();
+			ExecutionTargetsManager.DeviceListChanged -= OnExecutionTargetsChanged;
+		}
+
 		private void OnExecutionTargetsChanged (object dummy)
 		{
 			Runtime.RunInMainThread (delegate {

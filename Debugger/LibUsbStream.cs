@@ -213,7 +213,7 @@ namespace Microsoft.SPOT.Debugger
 
 		public static void Exit()
 		{
-			UsbDevice.Exit();
+			MonoLibUsb.MonoUsbEventHandler.Stop (false);
 		}
 	}
 
