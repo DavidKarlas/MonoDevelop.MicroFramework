@@ -15,7 +15,7 @@ namespace MonoDevelop.MicroFramework
 		}
 
 
-		public List<string> ReferencedAssemblies
+		public Task<List<string>> ReferencedAssemblies
 		{
 			get;
 			set;

@@ -84,11 +84,12 @@ namespace MonoDevelop.MicroFramework
 
 		protected override ExecutionCommand OnCreateExecutionCommand (ConfigurationSelector configSel, DotNetProjectConfiguration configuration)
 		{
-			var references = Project.GetReferencedAssemblies (configSel, true).Result.Select<AssemblyReference, string> ((r) => {
-				if (r.FilePath.IsAbsolute)
-					return r.FilePath;
-				return Project.GetAbsoluteChildPath (r.FilePath).FullPath;
-			}).ToList ();
+			var references = Project.GetReferencedAssemblies (configSel, true).ContinueWith (t => {
+				return t.Result.Select<AssemblyReference, string> ((r) => {
+					if (r.FilePath.IsAbsolute)
+						return r.FilePath;
+					return Project.GetAbsoluteChildPath (r.FilePath).FullPath;
+				}).ToList();});
 			return new MicroFrameworkExecutionCommand () {
 				OutputDirectory = configuration.OutputDirectory,
 				ReferencedAssemblies = references

@@ -219,7 +219,7 @@ namespace MonoDevelop.MicroFramework
 						}
 					}
 
-					var refs = command.ReferencedAssemblies.ToList();
+					var refs = command.ReferencedAssemblies.Result.ToList();
 
 					refs.AddRange(Directory.GetFiles(command.OutputDirectory, "*.dll"));
 
