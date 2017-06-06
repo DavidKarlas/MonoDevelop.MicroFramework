@@ -8,6 +8,7 @@
     <GenerateManifests>true</GenerateManifests>
     <DefineConstants>$(DefineConstants);MF_FRAMEWORK_VERSION_V4_3</DefineConstants>
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <CscToolExe>mcs.exe</CscToolExe>
   </PropertyGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
