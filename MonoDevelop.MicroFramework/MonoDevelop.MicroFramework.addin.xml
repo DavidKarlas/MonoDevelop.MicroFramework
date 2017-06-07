@@ -5,7 +5,7 @@
 		copyright	= "MIT"
 		description	= "Provides support for .Net MicroFramework developing, deploying and debugging."
 		category	= "IDE extensions"
-		version		= "0.6.0">
+		version		= "0.6.1">
 	<Runtime>
 		<Import assembly="Debugger.dll" />
 		<Import assembly="WinUsb.dll" />
