@@ -40,22 +40,6 @@
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Data" />
 		<Reference Include="System.Xml" />
-		<Reference Include="Mono.Cecil">
-			<HintPath>..\ext\Mono.Cecil.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Mono.Cecil.Mdb">
-			<HintPath>..\ext\Mono.Cecil.Mdb.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Mono.Cecil.Pdb">
-			<HintPath>..\ext\Mono.Cecil.Pdb.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Mono.Debugging">
-			<HintPath>..\ext\Mono.Debugging.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="MicroFrameworkDebugger.cs" />
