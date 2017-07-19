@@ -1398,26 +1398,27 @@ namespace MonoDevelop.MicroFramework
 			if (ctx.Frame.FrameType != CorFrameType.ILFrame)
 				yield break;
 
+			MethodDefinition met = null;
 			if (scope == null) {
-				var met = ctx.Frame.Function.GetMethodInfo (ctx.Session);
-				if (met != null)
+				met = ctx.Frame.Function.GetMethodInfo (ctx.Session);
+				if (met != null) {
 					scope = met.Body.Scope;
-				else {
+				} else {
 					throw new NotImplementedException ();
 					//lets asume this never happens on MicroFramework :)
-//					int count = ctx.Frame.GetLocalVariablesCount ();
-//					for (int n = 0; n < count; n++) {
-//						int locn = n;
-//						CorValRef vref = new CorValRef (delegate {
-//							return ctx.Frame.GetLocalVariable (locn);
-//						});
-//						yield return new VariableValueReference (ctx, vref, "local_" + (n + 1), ObjectValueFlags.Variable);
-//					}
-//					yield break;
+					//					int count = ctx.Frame.GetLocalVariablesCount ();
+					//					for (int n = 0; n < count; n++) {
+					//						int locn = n;
+					//						CorValRef vref = new CorValRef (delegate {
+					//							return ctx.Frame.GetLocalVariable (locn);
+					//						});
+					//						yield return new VariableValueReference (ctx, vref, "local_" + (n + 1), ObjectValueFlags.Variable);
+					//					}
+					//					yield break;
 				}
 			}
 
-			foreach (var var in scope.Variables) {
+			foreach (var var in scope == null ? met.Body.Variables : scope.Variables) {
 				if (var.Name == "$site")
 					continue;
 				if (IsClosureReferenceLocal (var) && IsGeneratedType (var.Name)) {
@@ -1438,10 +1439,12 @@ namespace MonoDevelop.MicroFramework
 				}
 			}
 
-			foreach (var cs in scope.Scopes) {
-				if (cs.Start.Offset <= offset && cs.End.Offset >= offset) {
-					foreach (var var in GetLocals (ctx, cs, offset, showHidden))
-						yield return var;
+			if (scope != null) {
+				foreach (var cs in scope.Scopes) {
+					if (cs.Start.Offset <= offset && cs.End.Offset >= offset) {
+						foreach (var var in GetLocals (ctx, cs, offset, showHidden))
+							yield return var;
+					}
 				}
 			}
 		}

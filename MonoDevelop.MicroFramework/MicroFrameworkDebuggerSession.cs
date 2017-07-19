@@ -426,7 +426,6 @@ namespace MonoDevelop.MicroFramework
 
 		protected override void OnNextLine()
 		{
-			Debug.WriteLine("WWW");
 			Step(false);
 		}
 
